@@ -1,0 +1,245 @@
+body {
+	background: url('../img/bg3.jpg') fixed top no-repeat;
+	background-size: cover;
+}
+
+@font-face {
+	font-family: 'aqua';
+	src: url(../font/aqua.ttf);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.bg {
+	pointer-events: none;
+	background: #000;
+	transition: all .5s ease-in-out;
+	z-index: -999;
+	width: 70%;
+	height: 70vh;
+	position: fixed;
+	top: 15%;
+	left: 15%;
+	border: 7px #eee solid;
+	box-shadow: #030903 1px 1px 8px 2px;
+	pointer-events: none;
+}
+
+.full {
+	width: 100% !important;
+	height: 100vh !important;
+	top: 0;
+	left: 0;
+	border: 0 #eee solid;
+	box-shadow: 0;
+}
+
+table.pick-point {
+	pointer-events: none;
+	/*opacity: 0;*/
+	background: #eee;
+	z-index: -990;
+	width: 70%;
+	height: 70vh;
+	position: fixed;
+	top: 150%;
+	left: 12%;
+	border: 7px #eee solid;
+	pointer-events: none;
+	transition: all .5s ease-in-out;
+	transform: rotate(45deg);
+}
+
+table.pick-point td {
+	width: 25%;
+	height: 33%;
+	background: #aaa;
+	border: 1px #eee solid;
+	color: #0b0f0b;
+	font-size: 30px;	
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-family: aqua;
+	/*transition: all .3s;*/
+}
+
+table.pick-point td.active {
+	background: #286212;
+	box-shadow: 2px 2px 2px 1px #777;
+}
+
+.question {
+	pointer-events: none;
+	width: 95px;
+	height: 125px;
+	position: fixed;
+	padding: 10px;
+	right: 15px;
+	bottom: 10px;
+	color: #e0e0e0;
+	font-size: 16px;
+}
+
+.bg-question {
+	pointer-events: none;
+	opacity: .5;
+	background: #000;
+	width: 95px;
+	height: 125px;
+	position: fixed;
+	padding: 10px;
+	right: 15px;
+	bottom: 10px;
+	border-radius: 10px;
+}
+
+.question .time {
+	width: 70px;
+	text-align: center;
+	color: #fff;
+	font-size: 60px;
+}
+
+/*remove select dotted boder*/
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+.status {
+	pointer-events: none;
+	width: 90%;
+	margin: 10px auto;
+	padding: 10px 10px 5px 10px;
+	border-radius: 5px;
+	color: #fff;
+	margin-top: -50px;
+}
+
+.bg-status {
+	pointer-events: none;
+	opacity: .5;
+	height: 40px;
+	width: 90%;
+	margin: 10px auto;
+	padding: 10px 10px 5px 10px;
+	background: #000;
+	border-radius: 5px;
+}
+
+.status .heath-1 {
+	width: 0%;
+	height: 20px;
+	background: #da132f;
+	display: inline-block;
+	/*border-radius: 10px;*/
+	transform: skewX(20deg);
+	-webkit-transform: skewX(20deg);
+	transition: all 1s;
+	z-index: 998
+}
+
+.status .heath-2 {
+	float: right;
+	width: 100%;
+	height: 20px;
+	background: #006301;
+	display: inline-block;
+	/*border-radius: 10px;*/
+	transform: skewX(20deg);
+	-webkit-transform: skewX(20deg);
+	transition: all 1s;
+	z-index: 1000;
+}
+
+.status .vs {
+	z-index: 999;
+	background: url('../img/loadingmini.gif') no-repeat center;
+	background-size: 100% 100%;
+	width: 50px;
+	height: 50px;
+	margin: -30px -27px -15px -27px;
+	display: inline-block;
+	transform: skewX(0deg);
+	-webkit-transform: skewX(0deg);
+}
+
+.status .team-1 {
+	opacity: .6;
+	margin-top: 5px;
+	float: left;
+	background: #000;
+	padding: 5px 15px;
+	border-radius: 0 0 55px 5px;
+}
+
+.status .team-2 {
+	opacity: .6;
+	margin-top: 5px;
+	float: right;
+	background: #000;
+	padding: 5px 15px;
+	border-radius: 0 0 5px 55px;
+}
+
+.preloading {
+	transition: all 1s ease;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	opacity: 1;
+	background: #000 url('../img/preloading.jpg') no-repeat top;
+	background-size: cover;
+	z-index: 99998;
+}
+
+.preloading > div {
+	background: #000 url(../img/loadingmini.gif) no-repeat center;
+	width: 120px;
+	height: 120px;
+	position: fixed;
+	z-index: 99999;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+}
+
+.chat-box-bg {
+	width: calc(100% - 260px);
+	height: 60px;
+	background: #000;
+	border-radius: 7px;
+	position: fixed;
+	left: 130px;
+	bottom: 10px;
+	opacity: .5;
+	transition: all .1s ease-out;
+}
+
+.chat-box {
+	overflow: hidden;
+	width: calc(90% - 130px);
+	height: 60px;
+	border-radius: 7px;
+	position: fixed;
+	left: 130px;
+	bottom: 10px;
+	padding: 0 20px;
+	transition: all .1s ease-out;
+}
+
+.chat-box .msg {
+	position: relative;
+}
+
+.chat-box .txt {
+	position: absolute;
+	color: #eee;
+	line-height: 30px;
+	top: -30px;
+	transition: all 1s ease-in-out;
+}
